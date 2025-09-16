@@ -1,7 +1,7 @@
 import Herosection from '../components/inicio/Herosection.jsx';
 import Destacados from '../components/inicio/Destacados.jsx';
 import PorqueElegirnos from '../components/inicio/PorqueElegirnos.jsx';
-import CTA from '../components/inicio/CTA.JSX';
+import CTA from '../components/inicio/CTA.jsx';
 
 function Inicio() {
 	return (
