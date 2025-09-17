@@ -39,7 +39,7 @@ function Footer() {
             
             {/* Redes sociales optimizadas */}
             <div className="flex space-x-3 sm:space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="group relative p-2.5 sm:p-3 bg-[#5DA9E9]/10 rounded-full hover:bg-[#5DA9E9]/20 transition-all duration-300 transform hover:scale-110">
+              <a href="https://www.facebook.com/blanquearia.kuyen" target="_blank" rel="noopener noreferrer" className="group relative p-2.5 sm:p-3 bg-[#5DA9E9]/10 rounded-full hover:bg-[#5DA9E9]/20 transition-all duration-300 transform hover:scale-110">
                 <svg className="w-4 sm:w-5 h-4 sm:h-5 text-[#9AE6B4] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.104C23.405 24 24 23.408 24 22.674V1.326C24 .592 23.405 0 22.675 0"/>
                 </svg>
@@ -128,6 +128,10 @@ function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white opacity-80 text-center md:text-left">
               © 2024 Kuyen Blanquería. Todos los derechos reservados.
+              <div className="mt-2 text-xs text-white/80 flex items-center justify-center gap-2">
+                Desarrollado con <span className="text-red-400">♥</span> por
+                <a href="https://devcraftpablo.online/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#9AE6B4] ml-1">Pablo Proboste</a>
+              </div>
             </p>
             <div className="flex items-center gap-6 text-sm text-white opacity-80">
               <a href="/privacy" className="hover:text-[#9AE6B4] transition-colors">Privacidad</a>
