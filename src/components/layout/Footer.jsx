@@ -1,29 +1,29 @@
 function Footer() {
   return (
-    <footer className="w-full bg-gradient-to-br from-[#2B4C7E] to-[#1A365D] text-white py-16 mt-16 relative overflow-hidden">
-      {/* Elementos decorativos de fondo */}
+    <footer className="w-full bg-gradient-to-br from-[#2B4C7E] to-[#1A365D] text-white py-12 sm:py-16 mt-12 sm:mt-16 relative overflow-hidden">
+      {/* Elementos decorativos de fondo optimizados */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 right-20 w-32 h-32 bg-[#5DA9E9]/5 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 left-10 w-24 h-24 bg-[#9AE6B4]/5 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute top-10 right-10 sm:right-20 w-24 sm:w-32 h-24 sm:h-32 bg-[#5DA9E9]/5 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-20 left-5 sm:left-10 w-20 sm:w-24 h-20 sm:h-24 bg-[#9AE6B4]/5 rounded-full animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-[#9AE6B4] rotate-45 animate-ping delay-500"></div>
         <div className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-[#5DA9E9] rotate-45 animate-ping delay-1500"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo y descripción */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {/* Logo y descripción optimizado */}
+          <div className="col-span-1 sm:col-span-2 lg:col-span-2">
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
               <div className="relative group">
                 <img 
                   src="/assets/logo/5.png" 
                   alt="Kuyen Logo" 
-                  className="h-16 w-auto transition-all duration-300 group-hover:scale-110 drop-shadow-lg filter brightness-110"
+                  className="h-12 sm:h-16 w-auto transition-all duration-300 group-hover:scale-110 drop-shadow-lg filter brightness-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#9AE6B4]/20 to-[#5DA9E9]/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div>
-                <h3 className="text-3xl font-bold mb-1 bg-gradient-to-r from-[#9AE6B4] to-[#5DA9E9] bg-clip-text text-transparent">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-1 bg-gradient-to-r from-[#9AE6B4] to-[#5DA9E9] bg-clip-text text-transparent">
                   Kuyen
                 </h3>
                 <p className="text-[#9AE6B4] text-sm font-medium">
@@ -32,20 +32,20 @@ function Footer() {
               </div>
             </div>
             
-            <p className="text-[#9AE6B4] mb-6 opacity-90 leading-relaxed">
+            <p className="text-[#9AE6B4] mb-4 sm:mb-6 opacity-90 leading-relaxed text-sm sm:text-base">
               Tu blanquería de confianza. Productos de calidad premium para hacer de tu hogar 
               un lugar más cómodo, hermoso y acogedor. Más de 500 productos disponibles.
             </p>
             
-            {/* Redes sociales solo WhatsApp, Facebook e Instagram */}
-            <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="group relative p-3 bg-[#5DA9E9]/10 rounded-full hover:bg-[#5DA9E9]/20 transition-all duration-300 transform hover:scale-110">
-                <svg className="w-5 h-5 text-[#9AE6B4] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+            {/* Redes sociales optimizadas */}
+            <div className="flex space-x-3 sm:space-x-4">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="group relative p-2.5 sm:p-3 bg-[#5DA9E9]/10 rounded-full hover:bg-[#5DA9E9]/20 transition-all duration-300 transform hover:scale-110">
+                <svg className="w-4 sm:w-5 h-4 sm:h-5 text-[#9AE6B4] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.104C23.405 24 24 23.408 24 22.674V1.326C24 .592 23.405 0 22.675 0"/>
                 </svg>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group relative p-3 bg-[#5DA9E9]/10 rounded-full hover:bg-[#5DA9E9]/20 transition-all duration-300 transform hover:scale-110">
-                <svg className="w-5 h-5 text-[#9AE6B4] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group relative p-2.5 sm:p-3 bg-[#5DA9E9]/10 rounded-full hover:bg-[#5DA9E9]/20 transition-all duration-300 transform hover:scale-110">
+                <svg className="w-4 sm:w-5 h-4 sm:h-5 text-[#9AE6B4] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.414 2.105 8.794 2.094 12 2.094zm0-2.163C8.741 0 8.332.012 7.052.07 5.782.127 4.515.399 3.54 1.374c-.974.974-1.246 2.241-1.308 3.608C2.175 7.353 2.163 7.733 2.163 12s.012 4.647.07 5.918c.062 1.366.334 2.633 1.308 3.608.974.974 2.241 1.246 3.608 1.308 1.266.058 1.646.069 4.85.069s3.584-.012 4.85-.07c1.366-.062 2.633-.334 3.608-1.308.974-.974 1.246-2.241 1.308-3.608.058-1.271.07-1.651.07-5.918s-.012-4.647-.07-5.918c-.062-1.366-.334-2.633-1.308-3.608-.974-.974-2.241-1.246-3.608-1.308C15.647.012 15.267 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
                 </svg>
               </a>
