@@ -5,14 +5,14 @@ export const GOOGLE_SHEETS_CONFIG = {
   // ID de tu Google Sheet (parte del enlace entre /d/ y /edit)
   // Ejemplo: si tu enlace es https://docs.google.com/spreadsheets/d/1ABC123xyz789/edit
   // El ID sería: 1ABC123xyz789
-  SHEET_ID: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms', // ID de ejemplo público
+  SHEET_ID: '1bDU4UhK4IgeYoAWE9YooUD0OO10kBzOa2NePeDtR41M', // ID de ejemplo público
   
   // Nombre de la hoja y rango de celdas
-  SHEET_NAME: 'Productos', // Cambia si tu hoja se llama diferente
+  SHEET_NAME: 'Inventario Kuyen', // Cambia si tu hoja se llama diferente
   RANGE: 'A1:G1000', // Rango de celdas a leer (A1:G1000 = columnas A-G, filas 1-1000)
   
   // API Key pública de Google Sheets (NO cambiar a menos que uses tu propia API key)
-  API_KEY: 'AIzaSyBpKpTgLIhIyZ3zCJZo2ZHl-fI5xgS4Uo0',
+  API_KEY: import.meta.env.VITE_GOOGLE_SHEETS_API_KEY,
   
   // Configuración de actualización
   AUTO_REFRESH_INTERVAL: 300000, // 5 minutos en milisegundos (300000ms = 5min)
