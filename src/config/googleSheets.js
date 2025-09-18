@@ -11,7 +11,7 @@ export const GOOGLE_SHEETS_CONFIG = {
   SHEET_NAME: 'InventarioKuyen', // Cambia si tu hoja se llama diferente
   RANGE: 'A1:G1000', // Rango de celdas a leer (A1:G1000 = columnas A-G, filas 1-1000)
   
-  // API Key pública de Google Sheets (NO cambiar a menos que uses tu propia API key)
+// API Key pública de Google Sheets (NO cambiar a menos que uses tu propia API key)
   API_KEY: import.meta.env.VITE_GOOGLE_SHEETS_API_KEY,
   
   // Configuración de actualización
