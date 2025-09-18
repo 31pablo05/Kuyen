@@ -8,7 +8,7 @@ export const GOOGLE_SHEETS_CONFIG = {
   SHEET_ID: '1bDU4UhK4IgeYoAWE9YooUD0OO10kBzOa2NePeDtR41M', // ID de ejemplo público
   
   // Nombre de la hoja y rango de celdas
-  SHEET_NAME: 'Inventario Kuyen', // Cambia si tu hoja se llama diferente
+  SHEET_NAME: 'InventarioKuyen', // Cambia si tu hoja se llama diferente
   RANGE: 'A1:G1000', // Rango de celdas a leer (A1:G1000 = columnas A-G, filas 1-1000)
   
   // API Key pública de Google Sheets (NO cambiar a menos que uses tu propia API key)
