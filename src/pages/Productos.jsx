@@ -25,9 +25,7 @@ function Productos() {
             <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30">
               <span className="text-white font-semibold">✨ Productos Exclusivos</span>
             </div>
-            <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30">
-              <span className="text-white font-semibold">🚚 Envío Gratis</span>
-            </div>
+            
             <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30">
               <span className="text-white font-semibold">💳 Mejores Precios</span>
             </div>

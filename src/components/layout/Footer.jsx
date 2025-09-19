@@ -40,18 +40,18 @@ function Footer() {
             {/* Redes sociales optimizadas */}
             <div className="flex space-x-3 sm:space-x-4">
               <a href="https://www.facebook.com/blanquearia.kuyen" target="_blank" rel="noopener noreferrer" className="group relative p-2.5 sm:p-3 bg-[#5DA9E9]/10 rounded-full hover:bg-[#5DA9E9]/20 transition-all duration-300 transform hover:scale-110">
-                <svg className="w-4 sm:w-5 h-4 sm:h-5 text-[#9AE6B4] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#1877F3] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.104C23.405 24 24 23.408 24 22.674V1.326C24 .592 23.405 0 22.675 0"/>
                 </svg>
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group relative p-2.5 sm:p-3 bg-[#5DA9E9]/10 rounded-full hover:bg-[#5DA9E9]/20 transition-all duration-300 transform hover:scale-110">
-                <svg className="w-4 sm:w-5 h-4 sm:h-5 text-[#9AE6B4] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.414 2.105 8.794 2.094 12 2.094zm0-2.163C8.741 0 8.332.012 7.052.07 5.782.127 4.515.399 3.54 1.374c-.974.974-1.246 2.241-1.308 3.608C2.175 7.353 2.163 7.733 2.163 12s.012 4.647.07 5.918c.062 1.366.334 2.633 1.308 3.608.974.974 2.241 1.246 3.608 1.308 1.266.058 1.646.069 4.85.069s3.584-.012 4.85-.07c1.366-.062 2.633-.334 3.608-1.308.974-.974 1.246-2.241 1.308-3.608.058-1.271.07-1.651.07-5.918s-.012-4.647-.07-5.918c-.062-1.366-.334-2.633-1.308-3.608-.974-.974-2.241-1.246-3.608-1.308C15.647.012 15.267 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                <svg className="w-5 h-5 text-[#E4405F] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 3.25a5.5 5.5 0 1 1-5.5 5.5a5.5 5.5 0 0 1 5.5-5.5zm0 1.5a4 4 0 1 0 4 4a4 4 0 0 0-4-4zm5.25.75a1.25 1.25 0 1 1-1.25 1.25a1.25 1.25 0 0 1 1.25-1.25z"/>
                 </svg>
               </a>
               <a href="https://wa.me/2804325023" target="_blank" rel="noopener noreferrer" className="group relative p-3 bg-[#25D366]/20 rounded-full hover:bg-[#25D366]/30 transition-all duration-300 transform hover:scale-110">
-                <svg className="w-5 h-5 text-[#25D366] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.570-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                <svg className="w-5 h-5 text-[#25D366] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 32 32">
+                  <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.668 4.624 1.934 6.6L4 29l7.6-1.934A12.96 12.96 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.657 0-3.243-.336-4.7-.98l-.34-.15-4.52.98.98-4.52-.15-.34A9.96 9.96 0 0 1 6 15c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.2-7.6c-.28-.14-1.66-.82-1.92-.9-.26-.09-.45-.14-.64.14-.19.28-.74.93-.91 1.12-.17.19-.32.2-.59.07-.28-.14-1.18-.41-2.24-1.34-.83-.74-1.39-1.65-1.55-1.92-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.19-.28.28-.47.09-.19.05-.35-.03-.49-.08-.14-.7-1.7-.96-2.32-.25-.61-.5-.53-.69-.54-.18-.01-.38-.01-.59-.01-.2 0-.53.08-.81.39-.28.31-1.07 1.08-1.07 2.64 0 1.56 1.14 3.07 1.3 3.29.16.22 2.24 3.43 5.43 4.81.76.33 1.36.53 1.83.68.77.25 1.47.21 2.02.13.62-.09 1.91-.77 2.18-1.52.27-.75.27-1.39.19-1.52-.08-.13-.28-.21-.59-.37z"/>
                 </svg>
               </a>
             </div>
@@ -89,11 +89,33 @@ function Footer() {
               <span className="w-2 h-2 bg-[#9AE6B4] rounded-full"></span>
               Contacto
             </h4>
-            <ul className="space-y-3 text-white opacity-90">
+            <ul className="space-y-3 text-white opacity-90 bg-gradient-to-br from-[#5DA9E9]/10 via-[#9AE6B4]/10 to-[#2B4C7E]/10 rounded-xl p-4 shadow-lg border border-[#5DA9E9]/20">
               <li className="flex items-start group">
                 <span className="text-[#9AE6B4] mr-3 mt-1 group-hover:scale-110 transition-transform">📍</span>
                 <div>
-                  <span className="group-hover:text-[#9AE6B4] transition-colors">Av. Principal 123, Ciudad</span>
+                  <a
+                    href="https://www.google.com/maps/search/Aaron+Jenkins+1529+Trelew+Chubut"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group-hover:text-[#9AE6B4] transition-colors font-semibold underline hover:opacity-80"
+                  >
+                    Aaron Jenkins 1529, Trelew, Chubut
+                  </a>
+                  <span className="block text-xs text-[#9AE6B4]/80">Showroom Principal</span>
+                </div>
+              </li>
+              <li className="flex items-start group">
+                <span className="text-[#9AE6B4] mr-3 mt-1 group-hover:scale-110 transition-transform">🛒</span>
+                <div>
+                  <a
+                    href="https://www.google.com/maps?q=-43.241201,-65.315248"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group-hover:text-[#9AE6B4] transition-colors font-semibold underline hover:opacity-80"
+                  >
+                    Feria Barrio San Martín
+                  </a>
+                  <span className="block text-xs text-[#9AE6B4]/80">Fines de semana - Coordenadas: -43.241201, -65.315248</span>
                 </div>
               </li>
               <li className="flex items-start group">

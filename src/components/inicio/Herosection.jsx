@@ -22,7 +22,7 @@ function Herosection() {
   }, [textos.length]);
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F5F5F5] via-white to-[#9AE6B4]/10 px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F5F5F5] via-white to-[#9AE6B4]/10 px-2 sm:px-6 lg:px-8 py-6 sm:py-12">
       {/* Elementos decorativos de fondo optimizados */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Círculos animados responsivos */}
@@ -40,7 +40,7 @@ function Herosection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-12">
           
           {/* Contenido de texto optimizado */}
           <div className={`flex-1 text-center lg:text-left transform transition-all duration-1000 ${
@@ -48,7 +48,7 @@ function Herosection() {
           }`}>
             
             {/* Badge superior responsivo */}
-            <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-md mb-6 border border-[#5DA9E9]/20">
+            <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/80 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-md mb-4 sm:mb-6 border border-[#5DA9E9]/20">
               <img 
                 src="/assets/logo/5.png" 
                 alt="Kuyen Logo" 
@@ -59,18 +59,18 @@ function Herosection() {
             </div>
 
             {/* Título principal */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight">
-              <span className="block bg-gradient-to-r from-[#5DA9E9] via-[#2B4C7E] to-[#5DA9E9] bg-clip-text text-transparent animate-gradient bg-300% mb-2">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black mb-4 sm:mb-6 leading-tight text-center lg:text-left">
+              <span className="block bg-gradient-to-r from-[#5DA9E9] via-[#2B4C7E] to-[#5DA9E9] bg-clip-text text-transparent animate-gradient bg-300% mb-1 sm:mb-2">
                 Kuyen
               </span>
-              <span className="block text-2xl sm:text-3xl lg:text-4xl font-light text-[#2B4C7E]/80">
+              <span className="block text-lg sm:text-2xl lg:text-4xl font-semibold text-[#2B4C7E] drop-shadow-md">
                 Blanquería Moderna
               </span>
             </h1>
 
             {/* Subtítulo animado */}
-            <div className="h-16 mb-8 flex items-center">
-              <p className={`text-lg sm:text-xl lg:text-2xl text-[#2B4C7E]/70 font-medium transition-all duration-500 transform ${
+            <div className="h-12 sm:h-16 mb-6 sm:mb-8 flex items-center justify-center lg:justify-start">
+              <p className={`text-base sm:text-xl lg:text-2xl text-[#2B4C7E] font-bold drop-shadow-md transition-all duration-500 transform ${
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
               }`}>
                 {textos[currentText]}
@@ -78,13 +78,13 @@ function Herosection() {
             </div>
 
             {/* Descripción */}
-            <p className="text-base sm:text-lg text-[#2B4C7E]/60 mb-8 max-w-2xl leading-relaxed">
-              Descubrí nuestra colección de toallones, sábanas, acolchados, alfombras, mochilas y cortinas. 
-              Calidad premium, diseños modernos y los mejores precios para transformar tu hogar.
+            <p className="text-sm sm:text-lg text-[#2B4C7E] font-semibold drop-shadow mb-6 sm:mb-8 max-w-xl sm:max-w-2xl mx-auto lg:mx-0 leading-relaxed text-center lg:text-left">
+              Descubrí nuestra colección de toallones, sábanas, acolchados, alfombras, mochilas y cortinas.<br className="hidden sm:block" />
+              <span className="block mt-1">Calidad premium, diseños modernos y los mejores precios para transformar tu hogar.</span>
             </p>
 
             {/* Botones de acción */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start w-full">
               <a 
                 href="/productos" 
                 className="group relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#5DA9E9] to-[#2B4C7E] text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden"
@@ -112,7 +112,7 @@ function Herosection() {
             </div>
 
             {/* Estadísticas */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-8 mt-12 pt-8 border-t border-[#5DA9E9]/10">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-8 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#5DA9E9]/10">
               <div className="text-center">
                 <div className="text-2xl font-bold text-[#5DA9E9]">500+</div>
                 <div className="text-sm text-[#2B4C7E]/60">Productos</div>
@@ -129,7 +129,7 @@ function Herosection() {
           </div>
 
           {/* Imagen principal */}
-          <div className={`w-full mt-8 lg:mt-0 lg:flex-1 flex justify-center lg:justify-end transform transition-all duration-1000 delay-300 ${
+          <div className={`w-full mt-6 sm:mt-8 lg:mt-0 lg:flex-1 flex justify-center lg:justify-end transform transition-all duration-1000 delay-300 ${
             isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
           }`}>
             <div className="relative group">

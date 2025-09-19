@@ -270,11 +270,7 @@ const CatalogoSheets = () => {
                 <h3 className="text-lg font-bold text-[#2B4C7E] mb-1">Calidad Premium</h3>
                 <p className="text-sm text-gray-600">Productos cuidadosamente seleccionados</p>
               </div>
-              <div className="text-center">
-                <div className="text-4xl mb-2">🚚</div>
-                <h3 className="text-lg font-bold text-[#2B4C7E] mb-1">Envío Rápido</h3>
-                <p className="text-sm text-gray-600">Recibí tu pedido en tiempo récord</p>
-              </div>
+              
               <div className="text-center">
                 <div className="text-4xl mb-2">💬</div>
                 <h3 className="text-lg font-bold text-[#2B4C7E] mb-1">Atención Personalizada</h3>

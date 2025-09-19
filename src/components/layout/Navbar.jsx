@@ -32,8 +32,8 @@ function Navbar() {
 
       <nav className={`w-full sticky top-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-xl shadow-xl border-b border-[#5DA9E9]/20' 
-          : 'bg-white/90 backdrop-blur-md shadow-lg border-b border-[#F5F5F5]'
+          ? 'bg-gradient-to-r from-[#5DA9E9]/95 via-white/95 to-[#9AE6B4]/95 backdrop-blur-xl shadow-xl border-b border-[#2B4C7E]/30' 
+          : 'bg-gradient-to-r from-[#5DA9E9]/80 via-white/90 to-[#9AE6B4]/80 backdrop-blur-md shadow-lg border-b border-[#5DA9E9]/30'
       }`}>
 
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
@@ -44,7 +44,7 @@ function Navbar() {
             <a href="/" className="flex items-center gap-2 sm:gap-3 group">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#5DA9E9]/30 to-[#2B4C7E]/30 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500 scale-150"></div>
-                <div className="relative bg-gradient-to-br from-[#F8FAFC] to-white p-1.5 sm:p-2 rounded-xl border border-[#5DA9E9]/20 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <div className="relative bg-gradient-to-br from-[#5DA9E9]/20 to-[#9AE6B4]/20 backdrop-blur-sm p-1.5 sm:p-2 rounded-xl border border-[#5DA9E9]/30 shadow-lg group-hover:shadow-xl transition-all duration-300">
                   <img 
                     src="/assets/logo/5.png" 
                     alt="Kuyen Logo" 
@@ -79,8 +79,8 @@ function Navbar() {
                   href={link.href} 
                   className={`relative px-3 lg:px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 group ${
                     activeLink === link.href 
-                      ? 'text-white bg-gradient-to-r from-[#5DA9E9] to-[#2B4C7E] shadow-lg' 
-                      : 'text-[#2B4C7E] hover:text-[#5DA9E9] hover:bg-[#F8FAFC]'
+                      ? 'text-white bg-gradient-to-r from-[#2B4C7E] to-[#5DA9E9] shadow-lg' 
+                      : 'text-[#2B4C7E] hover:text-white hover:bg-gradient-to-r hover:from-[#5DA9E9]/80 hover:to-[#2B4C7E]/80 backdrop-blur-sm'
                   }`}
                   onClick={() => setActiveLink(link.href)}
                 >
@@ -118,7 +118,7 @@ function Navbar() {
           <div className="md:hidden flex items-center">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative p-2 text-[#2B4C7E] hover:text-[#5DA9E9] hover:bg-[#F8FAFC] rounded-lg transition-all duration-300 group"
+              className="relative p-2 text-[#2B4C7E] hover:text-white hover:bg-gradient-to-r hover:from-[#5DA9E9] hover:to-[#2B4C7E] rounded-lg transition-all duration-300 group"
               aria-label="Menú"
             >
               <div className="relative w-6 h-6">
@@ -134,10 +134,10 @@ function Navbar() {
         <div className={`md:hidden transition-all duration-500 ease-in-out ${
           isMenuOpen ? 'max-h-screen opacity-100 pb-4 sm:pb-6' : 'max-h-0 opacity-0 pb-0'
         } overflow-hidden`}>
-          <div className="mt-3 sm:mt-4 bg-gradient-to-br from-white to-[#F8FAFC] rounded-2xl shadow-xl border border-[#5DA9E9]/20 overflow-hidden mx-1">
+          <div className="mt-3 sm:mt-4 bg-gradient-to-br from-[#5DA9E9]/10 via-white/90 to-[#9AE6B4]/10 backdrop-blur-md rounded-2xl shadow-xl border border-[#5DA9E9]/30 overflow-hidden mx-1">
             
             {/* Mobile user section optimizada */}
-            <div className="bg-gradient-to-r from-[#5DA9E9]/10 to-[#9AE6B4]/10 p-3 sm:p-4 border-b border-[#F5F5F5]">
+            <div className="bg-gradient-to-r from-[#5DA9E9]/20 via-[#9AE6B4]/20 to-[#5DA9E9]/20 p-3 sm:p-4 border-b border-[#5DA9E9]/30">
               <div className="flex items-center gap-3">
                 <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-[#5DA9E9] to-[#2B4C7E] rounded-full flex items-center justify-center shadow-lg">
                   <span className="text-white text-lg sm:text-xl font-bold">👤</span>
@@ -157,8 +157,8 @@ function Navbar() {
                   href={link.href} 
                   className={`flex items-center gap-3 px-3 sm:px-4 py-3 mx-1 sm:mx-2 my-1 rounded-xl transition-all duration-300 ${
                     activeLink === link.href 
-                      ? 'bg-gradient-to-r from-[#5DA9E9] to-[#2B4C7E] text-white shadow-lg' 
-                      : 'text-[#2B4C7E] hover:bg-[#F8FAFC] hover:text-[#5DA9E9]'
+                      ? 'bg-gradient-to-r from-[#2B4C7E] to-[#5DA9E9] text-white shadow-lg' 
+                      : 'text-[#2B4C7E] hover:bg-gradient-to-r hover:from-[#5DA9E9]/20 hover:to-[#9AE6B4]/20 hover:text-[#2B4C7E] backdrop-blur-sm'
                   }`}
                   onClick={() => {
                     setActiveLink(link.href);
@@ -184,7 +184,7 @@ function Navbar() {
             </div>
 
             {/* Mobile CTA Button optimizado */}
-            <div className="p-3 sm:p-4 bg-gradient-to-r from-[#F8FAFC] to-white border-t border-[#F5F5F5]">
+            <div className="p-3 sm:p-4 bg-gradient-to-r from-[#5DA9E9]/10 via-[#9AE6B4]/10 to-[#5DA9E9]/10 border-t border-[#5DA9E9]/30">
               <a 
                 href="/productos" 
                 className="block w-full bg-gradient-to-r from-[#5DA9E9] via-[#2B4C7E] to-[#5DA9E9] text-white text-center px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg relative overflow-hidden group"

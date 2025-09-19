@@ -94,7 +94,7 @@ function PorqueElegirnos() {
           </h2>
           
           <p className="text-sm sm:text-base lg:text-lg text-[#2B4C7E]/70 max-w-2xl mx-auto leading-relaxed px-4">
-            Más de una década brindando productos de calidad superior con el mejor servicio al cliente
+            Más de 5 años brindando productos de calidad superior con el mejor servicio al cliente
           </p>
         </div>
 
@@ -210,13 +210,7 @@ function PorqueElegirnos() {
               </div>
               
               <div className="flex items-center gap-3 sm:gap-4">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r from-[#9AE6B4] to-[#5DA9E9] rounded-full flex items-center justify-center">
-                  <span className="text-lg sm:text-xl lg:text-2xl">🚚</span>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-sm sm:text-base lg:text-xl font-bold text-[#2B4C7E]">Envío Gratis</div>
-                  <div className="text-xs sm:text-sm text-[#2B4C7E]/70">En compras superiores a $5000</div>
-                </div>
+                
               </div>
 
               <div className="flex items-center gap-3 sm:gap-4">
