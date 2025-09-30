@@ -1,3 +1,89 @@
+/* Reset para garantizar pantalla completa */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fix para scrollbar horizontal - PRIORIDAD MÁXIMA */
+html, 
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.main-container {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Secciones de ancho completo - CORREGIDO */
+.full-width-section {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Contenedor de contenido - CORREGIDO */
+.content-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Ajustes específicos para hero y destacados - CORREGIDO */
+.hero-section,
+.destacados-section {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* IMPORTANTE: Si necesitas padding interno, úsalo en los elementos hijos */
+.hero-section > *,
+.destacados-section > * {
+  /* El padding ahora se aplica aquí si es necesario */
+  /* padding: 2rem; */
+}
+
+/* Media queries para responsividad - SIMPLIFICADOS */
+@media screen and (min-width: 640px) {
+  .hero-section > *,
+  .destacados-section > * {
+    /* padding: 3rem; */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero-section > *,
+  .destacados-section > * {
+    /* padding: 4rem; */
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .hero-section > *,
+  .destacados-section > * {
+    /* padding: 5rem; */
+  }
+}
+
 /* Animaciones personalizadas para Kuyen */
 
 /* Animación de gradiente para el título */
@@ -51,6 +137,40 @@
   }
 }
 
+/* Animaciones para Navbar */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* Animaciones de entrada lateral */
 .slide-in-left {
   animation: slideInLeft 0.8s ease-out;
@@ -58,28 +178,6 @@
 
 .slide-in-right {
   animation: slideInRight 0.8s ease-out;
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 /* Estilo para botones con gradiente */
@@ -205,4 +303,23 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #4A90E2, #1A365D);
+}
+
+/* REGLAS ADICIONALES PARA ASEGURAR PANTALLA COMPLETA */
+
+/* Eliminar cualquier margen o padding heredado */
+.hero-section *,
+.destacados-section * {
+  /* No heredar márgenes no deseados */
+}
+
+/* Si tienes un contenedor padre, asegúrate que también sea 100% */
+#root,
+.app,
+.main-app {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }

@@ -5,7 +5,7 @@ import CTA from '../components/inicio/CTA.jsx';
 
 function Inicio() {
 	return (
-		<div className="w-full mx-auto px-2 md:px-8 lg:px-16">
+		<div className="w-full">
 			<Herosection />
 			<Destacados />
 			<PorqueElegirnos />
