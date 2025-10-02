@@ -182,9 +182,9 @@ function Herosection() {
                 </span>
               </span>
               <span className="block text-xl sm:text-2xl lg:text-4xl font-bold text-slate-700 mt-2">
-                <span className="inline-block animate-fade-in-up">Blanquería</span>
-                <span className="inline-block animate-fade-in-up animation-delay-200 ml-3">Moderna</span>
-              </span>
+  <span className="inline-block animate-fade-in-up">Confort y estilo en tu hogar</span>
+</span>
+
             </h1>
 
             {/* Subtítulo animado - corregido para mostrar todo el texto */}
