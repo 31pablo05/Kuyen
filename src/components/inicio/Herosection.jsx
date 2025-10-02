@@ -31,7 +31,13 @@ const CAROUSEL_IMAGES = [
     src: "/assets/images/productosKuyen/product45.jpg",
     alt: "Productos Destacados",
     title: "Productos Destacados"
+  },
+   {
+    src: "/assets/images/productosKuyen/product2.jpg",
+    alt: "Productos Destacados",
+    title: "Productos Destacados"
   }
+
 ];
 
 function Herosection() {
