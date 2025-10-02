@@ -13,12 +13,12 @@ const CAROUSEL_IMAGES = [
     title: "Productos de Calidad"
   },
   {
-    src: "/assets/images/productosKuyen/product15.jpg",
+    src: "/assets/images/productosKuyen/product73.jpg",
     alt: "Sábanas y Textiles",
     title: "Textiles para el Hogar"
   },
   {
-    src: "/assets/images/productosKuyen/product30.jpg",
+    src: "/assets/images/productosKuyen/product46.jpg",
     alt: "Blanquería Exclusiva",
     title: "Colección Exclusiva"
   },
@@ -28,7 +28,7 @@ const CAROUSEL_IMAGES = [
     title: "Conocé Kuyen"
   },
   {
-    src: "/assets/images/productosKuyen/product45.jpg",
+    src: "/assets/images/productosKuyen/product69.jpg",
     alt: "Productos Destacados",
     title: "Productos Destacados"
   },
@@ -36,7 +36,32 @@ const CAROUSEL_IMAGES = [
     src: "/assets/images/productosKuyen/product2.jpg",
     alt: "Productos Destacados",
     title: "Productos Destacados"
-  }
+  },
+  {
+    src: "/assets/images/productosKuyen/product37.jpg",
+    alt: "Productos Destacados",
+    title: "Productos Destacados"
+  },
+  {
+    src: "/assets/images/productosKuyen/product38.jpg",
+    alt: "Productos Destacados",
+    title: "Productos Destacados"
+  },
+  {
+    src: "/assets/images/productosKuyen/product32.jpg",
+    alt: "Productos Destacados",
+    title: "Productos Destacados"
+  },
+  {
+    src: "/assets/images/productosKuyen/product40.jpg",
+    alt: "Productos Destacados",
+    title: "Productos Destacados"
+  },
+  {
+    src: "/assets/images/productosKuyen/product48.jpg",
+    alt: "Productos Destacados",
+    title: "Productos Destacados"
+  },
 
 ];
 
@@ -172,13 +197,22 @@ function Herosection() {
             {/* Título principal */}
             <h1 className="mb-6 leading-tight text-center lg:text-left">
               <span className="block text-5xl sm:text-6xl lg:text-8xl font-black mb-3 relative">
-                <span className="relative inline-block">
-                  <span className="absolute inset-0 bg-gradient-to-r from-blue-500 via-blue-600 to-emerald-500 bg-clip-text text-transparent blur-sm animate-pulse-slow">
-                    Kuyen
+                <span className="relative inline-flex items-center gap-3">
+                  <span className="relative inline-block">
+                    <span className="absolute inset-0 bg-gradient-to-r from-blue-500 via-blue-600 to-emerald-500 bg-clip-text text-transparent blur-sm animate-pulse-slow">
+                      Kuyen
+                    </span>
+                    <span className="relative bg-gradient-to-r from-blue-500 via-blue-600 to-emerald-500 bg-clip-text text-transparent">
+                      Kuyen
+                    </span>
                   </span>
-                  <span className="relative bg-gradient-to-r from-blue-500 via-blue-600 to-emerald-500 bg-clip-text text-transparent">
-                    Kuyen
-                  </span>
+                  {/* Logo a la derecha del título principal */}
+                  <img 
+                    src="/assets/logo/logokuyen.svg" 
+                    alt="Logo Kuyen" 
+                    className="w-14 h-14 lg:w-20 lg:h-20 object-contain ml-2" 
+                    style={{verticalAlign: 'middle'}}
+                  />
                 </span>
               </span>
               <span className="block text-xl sm:text-2xl lg:text-4xl font-bold text-slate-700 mt-2">
@@ -299,11 +333,7 @@ function Herosection() {
                       loading="eager"
                     />
                   ))}
-                  {/* Indicador de imagen actual para debug */}
-                  <div className="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm z-40">
-                    Imagen: {currentImage + 1}/{carouselImages.length}
-                  </div>
-                  {/* Fallback si no hay imágenes en el array */}
+                  {/* ...existing code... */}
                   {carouselImages.length === 0 && (
                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-100 to-emerald-100 rounded-xl">
                       <div className="text-center p-8">

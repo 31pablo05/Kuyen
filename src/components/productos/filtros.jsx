@@ -1,5 +1,3 @@
-import { categorias, colores, rangosPrecios } from './catalogo.js';
-
 function Filtros({ 
   categoriaSeleccionada, 
   setCategoriaSeleccionada, 
@@ -7,7 +5,10 @@ function Filtros({
   setColorSeleccionado,
   rangoPrecios,
   setRangoPrecios,
-  limpiarFiltros 
+  limpiarFiltros,
+  categorias,
+  colores,
+  rangosPrecios: rangosDisponibles
 }) {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 mb-6 border border-[#9AE6B4] border-opacity-20">
@@ -69,7 +70,7 @@ function Filtros({
             onChange={(e) => setRangoPrecios(e.target.value)}
             className="w-full px-3 py-2 border border-[#5DA9E9] border-opacity-30 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5DA9E9] focus:border-[#5DA9E9]"
           >
-            {rangosPrecios.map((rango) => (
+            {rangosDisponibles.map((rango) => (
               <option key={rango.id} value={rango.id}>
                 {rango.nombre}
               </option>
