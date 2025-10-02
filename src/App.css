@@ -55,32 +55,25 @@ body {
   overflow-x: hidden;
 }
 
-/* IMPORTANTE: Si necesitas padding interno, úsalo en los elementos hijos */
-.hero-section > *,
-.destacados-section > * {
-  /* El padding ahora se aplica aquí si es necesario */
-  /* padding: 2rem; */
-}
-
 /* Media queries para responsividad - SIMPLIFICADOS */
 @media screen and (min-width: 640px) {
-  .hero-section > *,
-  .destacados-section > * {
-    /* padding: 3rem; */
+  .hero-section,
+  .destacados-section {
+    padding: 1rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .hero-section > *,
-  .destacados-section > * {
-    /* padding: 4rem; */
+  .hero-section,
+  .destacados-section {
+    padding: 2rem;
   }
 }
 
 @media screen and (min-width: 1536px) {
-  .hero-section > *,
-  .destacados-section > * {
-    /* padding: 5rem; */
+  .hero-section,
+  .destacados-section {
+    padding: 3rem;
   }
 }
 
@@ -305,13 +298,187 @@ body {
   background: linear-gradient(135deg, #4A90E2, #1A365D);
 }
 
-/* REGLAS ADICIONALES PARA ASEGURAR PANTALLA COMPLETA */
+/* ANIMACIONES ESPECÍFICAS PARA EL HERO SECTION */
 
-/* Eliminar cualquier margen o padding heredado */
-.hero-section *,
-.destacados-section * {
-  /* No heredar márgenes no deseados */
+/* Animaciones de elementos flotantes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
 }
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+}
+
+@keyframes float-particle {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(10px, -10px); }
+  50% { transform: translate(-5px, -20px); }
+  75% { transform: translate(-10px, -10px); }
+}
+
+/* Animaciones de pulso y brillo */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    opacity: 0.5; 
+    box-shadow: 0 0 20px currentColor; 
+  }
+  50% { 
+    opacity: 1; 
+    box-shadow: 0 0 40px currentColor; 
+  }
+}
+
+/* Animaciones de bounce suaves */
+@keyframes bounce-slow {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* Animaciones de rotación */
+@keyframes spin-very-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse-slow {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* Animación de entrada desde abajo */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CLASES DE ANIMACIÓN PARA USAR EN COMPONENTES */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.animate-spin-very-slow {
+  animation: spin-very-slow 20s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-reverse-slow 15s linear infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* Clase para delay de animación */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+/* ESTILOS ESPECÍFICOS PARA EL HERO SECTION */
+
+/* Animación de partículas flotantes */
+.float-particle {
+  animation-fill-mode: both;
+}
+
+/* Estilos para elementos decorativos del hero */
+.hero-float-element {
+  transition: transform 0.3s ease-out;
+}
+
+/* Estilos para el contenido del hero */
+.hero-content {
+  transition: all 1s ease-out;
+}
+
+/* Gradientes personalizados para el hero */
+.hero-gradient-text {
+  background: linear-gradient(135deg, #3B82F6 0%, #059669 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animación de blur para efectos especiales */
+.hero-blur-effect {
+  filter: blur(0.5px);
+}
+
+/* Estilo para contenedores con backdrop blur */
+.hero-backdrop {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive para animaciones en dispositivos móviles */
+@media (max-width: 768px) {
+  .animate-float,
+  .animate-float-delayed {
+    animation-duration: 4s;
+  }
+  
+  .animate-spin-very-slow,
+  .animate-spin-reverse-slow {
+    animation-duration: 10s;
+  }
+}
+
+/* Reducir movimiento para usuarios que prefieren menos animación */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delayed,
+  .animate-bounce-slow,
+  .animate-bounce-gentle,
+  .animate-spin-very-slow,
+  .animate-spin-reverse-slow {
+    animation: none;
+  }
+  
+  .animate-pulse-slow,
+  .animate-pulse-glow {
+    animation: none;
+    opacity: 0.7;
+  }
+}
+
+/* REGLAS ADICIONALES PARA ASEGURAR PANTALLA COMPLETA */
 
 /* Si tienes un contenedor padre, asegúrate que también sea 100% */
 #root,

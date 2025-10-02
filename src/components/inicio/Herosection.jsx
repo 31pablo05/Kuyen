@@ -1,10 +1,45 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
+
+// Array de imágenes para el carrusel - movido fuera del componente
+const CAROUSEL_IMAGES = [
+  {
+    src: "/assets/images/banner/bannerkuyen.PNG",
+    alt: "Colección Kuyen",
+    title: "Nuestra Colección"
+  },
+  {
+    src: "/assets/images/productosKuyen/product1.jpg",
+    alt: "Productos Premium",
+    title: "Productos de Calidad"
+  },
+  {
+    src: "/assets/images/productosKuyen/product15.jpg",
+    alt: "Sábanas y Textiles",
+    title: "Textiles para el Hogar"
+  },
+  {
+    src: "/assets/images/productosKuyen/product30.jpg",
+    alt: "Blanquería Exclusiva",
+    title: "Colección Exclusiva"
+  },
+  {
+    src: "/assets/images/banner/nosotrosKuyen.jpg",
+    alt: "Nosotros Kuyen",
+    title: "Conocé Kuyen"
+  },
+  {
+    src: "/assets/images/productosKuyen/product45.jpg",
+    alt: "Productos Destacados",
+    title: "Productos Destacados"
+  }
+];
 
 function Herosection() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentText, setCurrentText] = useState(0);
+  const [currentImage, setCurrentImage] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const heroRef = useRef(null);
 
   const textos = [
@@ -13,15 +48,34 @@ function Herosection() {
     "La mejor blanquería al mejor precio"
   ];
 
+  // Usar useMemo para las imágenes del carrusel
+  const carouselImages = useMemo(() => CAROUSEL_IMAGES, []);
+
+  // Debug: verificar rutas de imágenes
+  useEffect(() => {
+    console.log('Carrusel iniciado con imágenes:', carouselImages.map(img => img.src));
+  }, [carouselImages]);
+
   useEffect(() => {
     setIsVisible(true);
     
-    const interval = setInterval(() => {
+    const textInterval = setInterval(() => {
       setCurrentText((prev) => (prev + 1) % textos.length);
     }, 4000);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(textInterval);
+  }, [textos.length]);
+
+  // Carrusel automático
+  useEffect(() => {
+    if (isPaused) return;
+
+    const imageInterval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % carouselImages.length);
+    }, 5000);
+
+    return () => clearInterval(imageInterval);
+  }, [isPaused, carouselImages.length]);
 
   // Efecto parallax sutil al mover el mouse
   useEffect(() => {
@@ -37,6 +91,18 @@ function Herosection() {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % carouselImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
+  };
+
+  const goToImage = (index) => {
+    setCurrentImage(index);
+  };
 
   return (
     <section 
@@ -58,7 +124,6 @@ function Herosection() {
 
       {/* Elementos decorativos mejorados */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Orbes flotantes con blur */}
         <div 
           className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-float"
           style={{
@@ -74,7 +139,6 @@ function Herosection() {
           }}
         />
         
-        {/* Partículas flotantes */}
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
@@ -89,31 +153,17 @@ function Herosection() {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16 min-h-screen py-8">
           
-          {/* Contenido de texto mejorado */}
-          <div className={`flex-1 text-center lg:text-left transition-all duration-1000 ${
+          {/* Contenido de texto */}
+          <div className={`w-full lg:w-1/2 lg:flex-shrink-0 text-center lg:text-left transition-all duration-1000 ${
             isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
           }`}>
             
-            {/* Badge superior con efecto glassmorphism */}
-            <div className="inline-flex items-center gap-3 bg-white/60 backdrop-blur-lg px-5 py-2.5 rounded-full shadow-lg mb-6 border border-white/20 hover:scale-105 transition-transform duration-300">
-              <div className="relative">
-                <img 
-                  src="/assets/logo/5.png" 
-                  alt="Kuyen Logo" 
-                  className="h-8 w-auto"
-                />
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full animate-ping" />
-              </div>
-              <div className="h-4 w-px bg-gradient-to-b from-transparent via-blue-400/50 to-transparent" />
-              <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">
-                Blanquería Premium
-              </span>
-            </div>
+            {/* Logo eliminado, solo el título principal queda */}
 
-            {/* Título principal con animación de reveal */}
+            {/* Título principal */}
             <h1 className="mb-6 leading-tight text-center lg:text-left">
               <span className="block text-5xl sm:text-6xl lg:text-8xl font-black mb-3 relative">
                 <span className="relative inline-block">
@@ -131,19 +181,18 @@ function Herosection() {
               </span>
             </h1>
 
-            {/* Subtítulo animado con transición suave */}
-            <div className="h-16 sm:h-20 mb-8 flex items-center justify-center lg:justify-start overflow-hidden">
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-600 relative">
+            {/* Subtítulo animado - corregido para mostrar todo el texto */}
+            <div className="relative mb-8 flex items-center justify-center lg:justify-start" style={{height: '2.5em'}}>
+              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-600 w-full text-center lg:text-left" style={{minHeight: '2.5em', position: 'relative'}}>
                 {textos.map((texto, index) => (
                   <span
                     key={index}
-                    className={`absolute inset-0 transition-all duration-700 ${
+                    className={`absolute left-0 right-0 transition-all duration-700 ${
                       index === currentText
                         ? 'opacity-100 translate-y-0'
-                        : index < currentText
-                        ? 'opacity-0 -translate-y-full'
-                        : 'opacity-0 translate-y-full'
+                        : 'opacity-0 pointer-events-none'
                     }`}
+                    style={{top: 0}}
                   >
                     {texto}
                   </span>
@@ -151,7 +200,7 @@ function Herosection() {
               </p>
             </div>
 
-            {/* Descripción mejorada */}
+            {/* Descripción */}
             <p className="text-base sm:text-lg text-slate-600 font-medium mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed text-center lg:text-left">
               Descubrí nuestra colección exclusiva de{' '}
               <span className="text-blue-600 font-semibold">toallones</span>,{' '}
@@ -162,13 +211,11 @@ function Herosection() {
               </span>
             </p>
 
-            {/* Botones de acción mejorados */}
+            {/* Botones de acción */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
               <a 
                 href="/productos" 
                 className="group relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
               >
                 <span className="relative z-10 flex items-center gap-3">
                   <span>Explorar Productos</span>
@@ -182,9 +229,6 @@ function Herosection() {
                   </svg>
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-emerald-600 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute inset-0 bg-white/20 animate-shimmer" />
-                </div>
               </a>
               
               <a 
@@ -200,7 +244,7 @@ function Herosection() {
               </a>
             </div>
 
-            {/* Estadísticas mejoradas con contadores animados */}
+            {/* Estadísticas */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-8 pt-8 border-t border-slate-200/50">
               {[
                 { value: '500+', label: 'Productos', color: 'from-blue-600 to-blue-700' },
@@ -210,7 +254,6 @@ function Herosection() {
                 <div 
                   key={index}
                   className="group text-center hover:scale-110 transition-transform duration-300 cursor-default"
-                  style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <div className={`text-3xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-300`}>
                     {stat.value}
@@ -221,36 +264,105 @@ function Herosection() {
             </div>
           </div>
 
-          {/* Imagen principal mejorada */}
-          <div className={`w-full lg:flex-1 flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${
+          {/* CARRUSEL DE IMÁGENES MEJORADO */}
+          <div className={`w-full lg:w-1/2 lg:flex-shrink-0 flex justify-center transition-all duration-1000 delay-300 ${
             isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'
           }`}>
-            <div className="relative group cursor-pointer">
+            <div className="w-full max-w-2xl">
+              <div className="relative group">
               
-              {/* Contenedor de imagen con efectos avanzados */}
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-gradient-to-br from-white via-slate-50 to-blue-50 p-6 transition-all duration-500 group-hover:shadow-blue-500/20 group-hover:scale-105">
-                <img 
-                  src="/assets/images/banner/bannerkuyen.PNG" 
-                  alt="Kuyen Banner - Productos de Blanquería" 
-                  className="w-full max-w-md lg:max-w-lg h-auto object-contain transform transition-all duration-700 group-hover:scale-110" 
-                />
-                
-                {/* Overlay con efecto de brillo */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl" />
-                
-                {/* Efecto de escaneo de luz */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 animate-shine" />
+              {/* Contenedor del carrusel - corregido para visibilidad y responsividad */}
+              <div 
+                className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden rounded-3xl shadow-2xl bg-gradient-to-br from-white via-slate-50 to-blue-50 p-2 sm:p-4 transition-all duration-500 group-hover:shadow-blue-500/20"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+              >
+                {/* Imágenes del carrusel */}
+                <div className="relative w-full h-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200">
+                  {carouselImages.map((image, index) => (
+                    <img
+                      key={index}
+                      src={image.src}
+                      alt={image.alt}
+                      className={`absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-700 ease-in-out ${index === currentImage ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                      onLoad={() => console.log(`✓ Imagen cargada: ${image.src}`)}
+                      onError={(e) => {
+                        console.error(`✗ Error cargando imagen: ${image.src}`);
+                        e.target.style.display = 'none';
+                      }}
+                      loading="eager"
+                    />
+                  ))}
+                  {/* Indicador de imagen actual para debug */}
+                  <div className="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm z-40">
+                    Imagen: {currentImage + 1}/{carouselImages.length}
+                  </div>
+                  {/* Fallback si no hay imágenes en el array */}
+                  {carouselImages.length === 0 && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-100 to-emerald-100 rounded-xl">
+                      <div className="text-center p-8">
+                        <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-full flex items-center justify-center">
+                          <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                        <h3 className="text-xl font-bold text-slate-700 mb-2">Kuyen Blanquería</h3>
+                        <p className="text-slate-600">No hay imágenes disponibles.</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
+
+                {/* Título de la imagen actual y estado han sido removidos para no tapar la imagen */}
+
+                {/* Controles del carrusel */}
+                <div className="absolute inset-0 flex items-center justify-between px-4 z-20">
+                  <button
+                    onClick={prevImage}
+                    className="bg-white/95 backdrop-blur-sm hover:bg-white text-slate-700 p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100 border border-white/50"
+                    aria-label="Imagen anterior"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  
+                  <button
+                    onClick={nextImage}
+                    className="bg-white/95 backdrop-blur-sm hover:bg-white text-slate-700 p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100 border border-white/50"
+                    aria-label="Imagen siguiente"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Botón de pausa/play eliminado */}
+
+                {/* Indicadores de posición (dots) */}
+                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-30 bg-white/80 backdrop-blur-md px-4 py-3 rounded-full shadow-xl border border-white/50">
+                  {carouselImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => goToImage(index)}
+                      className={`transition-all duration-300 rounded-full border-2 ${
+                        index === currentImage
+                          ? 'w-8 h-3 bg-gradient-to-r from-blue-600 to-emerald-600 border-blue-600 shadow-lg'
+                          : 'w-3 h-3 bg-slate-300 hover:bg-slate-400 border-slate-300 hover:border-slate-400 hover:scale-110'
+                      }`}
+                      aria-label={`Ir a imagen ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Overlay con efecto de brillo */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl pointer-events-none" />
               </div>
 
-              {/* Elementos decorativos flotantes mejorados */}
-              <div className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl rotate-12 shadow-xl flex items-center justify-center group-hover:rotate-45 transition-all duration-500 animate-float">
-                <img 
-                  src="/assets/logo/logokuyen.svg" 
-                  alt="Kuyen Logo" 
-                  className="h-12 w-auto"
-                />
+              {/* Elemento flotante del logo, ahora delante del carrusel */}
+              <div className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl rotate-12 shadow-xl flex items-center justify-center group-hover:rotate-45 transition-all duration-500 animate-float z-50">
+                <img src="/assets/logo/logo.svg" alt="Logo Kuyen" className="w-14 h-14" />
               </div>
               
               <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl rotate-45 shadow-lg group-hover:rotate-90 transition-all duration-500 animate-float-delayed" />
@@ -262,17 +374,18 @@ function Herosection() {
               />
               
               {/* Anillos decorativos animados */}
-              <div className="absolute inset-0 -z-10">
+              <div className="absolute inset-0 -z-10 pointer-events-none">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-emerald-500/10 rounded-full scale-110 animate-pulse-slow" />
                 <div className="absolute inset-0 border-2 border-blue-400/30 rounded-full scale-125 animate-spin-very-slow" />
                 <div className="absolute inset-0 border-2 border-emerald-400/30 rounded-full scale-150 animate-spin-reverse-slow" />
               </div>
             </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Indicador de scroll mejorado */}
+      {/* Indicador de scroll */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
         <div className="flex flex-col items-center gap-2 text-slate-500 group cursor-pointer hover:text-blue-600 transition-colors duration-300">
           <span className="text-sm font-semibold tracking-wide">Descubre más</span>
@@ -284,124 +397,6 @@ function Herosection() {
           </div>
         </div>
       </div>
-
-      {/* Estilos de animación personalizados */}
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-        
-        @keyframes float-delayed {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-30px); }
-        }
-        
-        @keyframes float-particle {
-          0%, 100% { transform: translate(0, 0); }
-          25% { transform: translate(10px, -10px); }
-          50% { transform: translate(-5px, -20px); }
-          75% { transform: translate(-10px, -10px); }
-        }
-        
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 0.6; }
-        }
-        
-        @keyframes pulse-glow {
-          0%, 100% { opacity: 0.5; box-shadow: 0 0 20px currentColor; }
-          50% { opacity: 1; box-shadow: 0 0 40px currentColor; }
-        }
-        
-        @keyframes bounce-slow {
-          0%, 100% { transform: translate(-50%, 0); }
-          50% { transform: translate(-50%, -10px); }
-        }
-        
-        @keyframes bounce-gentle {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(5px); }
-        }
-        
-        @keyframes spin-very-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        
-        @keyframes spin-reverse-slow {
-          from { transform: rotate(360deg); }
-          to { transform: rotate(0deg); }
-        }
-        
-        @keyframes shine {
-          to { transform: translateX(200%); }
-        }
-        
-        @keyframes shimmer {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-        
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-        
-        .animate-float-delayed {
-          animation: float-delayed 8s ease-in-out infinite;
-        }
-        
-        .animate-pulse-slow {
-          animation: pulse-slow 4s ease-in-out infinite;
-        }
-        
-        .animate-pulse-glow {
-          animation: pulse-glow 3s ease-in-out infinite;
-        }
-        
-        .animate-bounce-slow {
-          animation: bounce-slow 3s ease-in-out infinite;
-        }
-        
-        .animate-bounce-gentle {
-          animation: bounce-gentle 2s ease-in-out infinite;
-        }
-        
-        .animate-spin-very-slow {
-          animation: spin-very-slow 20s linear infinite;
-        }
-        
-        .animate-spin-reverse-slow {
-          animation: spin-reverse-slow 15s linear infinite;
-        }
-        
-        .animate-shine {
-          animation: shine 2s ease-in-out;
-        }
-        
-        .animate-shimmer {
-          animation: shimmer 2s ease-in-out infinite;
-        }
-        
-        .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out forwards;
-        }
-        
-        .animation-delay-200 {
-          animation-delay: 0.2s;
-        }
-      `}</style>
     </section>
   );
 }

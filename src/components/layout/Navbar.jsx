@@ -45,29 +45,28 @@ function Navbar() {
         <div className="absolute bottom-1 left-1/2 w-1.5 h-1.5 bg-[#2B4C7E]/15 rounded-full animate-ping" style={{animationDelay: '4s'}}></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative">
-        <div className="flex justify-between items-center h-16 sm:h-18 md:h-20">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 relative">
+        <div className="flex flex-wrap justify-between items-center h-14 sm:h-16 md:h-20 min-h-[56px]">
           
-          {/* Enhanced Logo */}
-          <div className="flex-shrink-0">
+          {/* Enhanced Logo - responsivo */}
+          <div className="flex-shrink-0 min-w-[40px]">
             <a href="/" className="flex items-center gap-2 sm:gap-3 group">
               <div className="relative">
                 {/* Multiple glow layers */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#5DA9E9]/40 to-[#2B4C7E]/40 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700 scale-150 animate-pulse"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#9AE6B4]/30 to-[#5DA9E9]/30 rounded-xl blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 scale-125"></div>
-                
-                <div className="relative bg-gradient-to-br from-[#5DA9E9]/20 to-[#9AE6B4]/20 backdrop-blur-sm p-1.5 sm:p-2 rounded-xl border border-[#5DA9E9]/30 shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:border-[#5DA9E9]/60">
+                <div className="relative bg-gradient-to-br from-[#5DA9E9]/20 to-[#9AE6B4]/20 backdrop-blur-sm p-1 rounded-xl border border-[#5DA9E9]/30 shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:border-[#5DA9E9]/60">
                   <img 
                     src="/assets/logo/logokuyen.svg" 
                     alt="Kuyen Logo" 
-                    className="h-10 sm:h-14 md:h-16 w-auto transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 filter group-hover:brightness-110"
+                    className="h-8 sm:h-12 md:h-14 w-auto transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 filter group-hover:brightness-110"
                     style={{ boxShadow: 'none', borderRadius: '0', background: 'none', border: 'none' }}
                   />
                 </div>
               </div>
               <div className="hidden xs:block">
                 <div className="flex flex-col">
-                  <span className="text-lg sm:text-xl md:text-2xl font-black bg-gradient-to-r from-[#5DA9E9] via-[#2B4C7E] to-[#5DA9E9] bg-clip-text text-transparent group-hover:from-[#4A90E2] group-hover:to-[#1A365D] transition-all duration-500 group-hover:scale-105">
+                  <span className="text-base sm:text-lg md:text-2xl font-black bg-gradient-to-r from-[#5DA9E9] via-[#2B4C7E] to-[#5DA9E9] bg-clip-text text-transparent group-hover:from-[#4A90E2] group-hover:to-[#1A365D] transition-all duration-500 group-hover:scale-105">
                     Kuyen
                   </span>
                   <div className="flex items-center gap-1 -mt-1">
@@ -153,21 +152,23 @@ function Navbar() {
             </a>
           </div>
 
-          {/* Enhanced Mobile menu button */}
+          {/* Enhanced Mobile menu button - alineado */}
           <div className="md:hidden flex items-center">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative p-2 text-[#2B4C7E] hover:text-white hover:bg-gradient-to-r hover:from-[#5DA9E9] hover:to-[#2B4C7E] rounded-lg transition-all duration-300 group hover:scale-110 hover:rotate-3"
+              className="relative flex items-center justify-center p-2 text-[#2B4C7E] hover:text-white hover:bg-gradient-to-r hover:from-[#5DA9E9] hover:to-[#2B4C7E] rounded-lg transition-all duration-300 group hover:scale-110 hover:rotate-3"
               aria-label="Menú"
+              style={{ minWidth: '44px', minHeight: '44px' }}
             >
-              <div className="relative w-6 h-6">
+              {/* Button glow effect - ahora envuelve correctamente las barras */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-r from-[#5DA9E9]/20 to-[#2B4C7E]/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur"></div>
+              </div>
+              <div className="relative w-6 h-6 flex items-center justify-center">
                 <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-500 ${isMenuOpen ? 'rotate-45 top-3 scale-110' : 'top-1 group-hover:w-7'}`}></span>
                 <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-300 top-3 ${isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100 group-hover:w-5'}`}></span>
                 <span className={`absolute h-0.5 w-6 bg-current transform transition-all duration-500 ${isMenuOpen ? '-rotate-45 top-3 scale-110' : 'top-5 group-hover:w-7'}`}></span>
               </div>
-              
-              {/* Button glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#5DA9E9]/20 to-[#2B4C7E]/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur"></div>
             </button>
           </div>
         </div>
@@ -189,7 +190,7 @@ function Navbar() {
               <div className="flex items-center gap-3 relative z-10">
                 <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-[#5DA9E9] to-[#2B4C7E] rounded-full flex items-center justify-center shadow-xl relative overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <span className="text-white text-lg sm:text-xl font-bold animate-bounce" style={{animationDuration: '2s'}}>👤</span>
+                  <img src="/assets/logo/logokuyen.svg" alt="Logo Kuyen" className="w-7 sm:w-9 h-7 sm:h-9 object-contain animate-bounce" style={{animationDuration: '2s'}} />
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-[#2B4C7E] animate-pulse">¡Bienvenido a Kuyen!</div>
