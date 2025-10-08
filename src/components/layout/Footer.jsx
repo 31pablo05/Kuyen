@@ -56,7 +56,7 @@ function Footer() {
                 </h3>
                 <p className="text-[#9AE6B4] text-sm font-semibold tracking-wide flex items-center gap-2">
                   Blanquería Premium
-                  <Sparkles className="w-3 h-3 text-[#9AE6B4] animate-pulse" />
+                  
                 </p>
               </div>
             </div>

@@ -9,7 +9,9 @@ function Inicio() {
 			<Herosection />
 			<Destacados />
 			<PorqueElegirnos />
-			<CTA />
+			<div className="w-full py-8 md:py-16 px-2 md:px-4 bg-gradient-to-br from-slate-50 via-white to-[#11b189]/5">
+				<CTA />
+			</div>
 		</div>
 	);
 }
