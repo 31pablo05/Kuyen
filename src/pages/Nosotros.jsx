@@ -1,6 +1,17 @@
 function Nosotros() {
   return (
-    <div className="w-full mx-auto px-4 md:px-8 lg:px-16 py-12 bg-gradient-to-br from-[#F5F5F5] via-white to-[#11b189]/5 min-h-screen">
+    <div className="w-full mx-auto px-4 md:px-8 lg:px-16 py-12 min-h-screen relative overflow-hidden">
+      {/* Imagen de fondo de toda la página */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/assets/images/banner/nosotrosKuyen.jpg" 
+          alt="Fondo Kuyen" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
+      {/* Contenido de la página */}
+      <div className="relative z-10">
       {/* Hero Section */}
       <section className="text-center mb-16 relative">
         {/* Elementos decorativos */}
@@ -29,8 +40,8 @@ function Nosotros() {
         <div className="absolute -top-10 -left-10 w-20 h-20 bg-[#11b189]/20 rounded-full blur-lg animate-pulse delay-500"></div>
         <div className="absolute -bottom-10 -right-10 w-16 h-16 bg-[#2563eb]/20 rounded-full blur-md animate-bounce delay-700"></div>
         
-        <div className="relative z-10 group">
-          <div className="bg-gradient-to-br from-white/80 to-[#2563eb]/5 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-[#2563eb]/20 hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+        <div className="relative z-20 group">
+          <div className="bg-gradient-to-br from-white/90 to-[#2563eb]/10 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-[#2563eb]/30 hover:shadow-3xl transition-all duration-500 transform hover:scale-105">
             <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#182e59] to-[#2563eb] bg-clip-text text-transparent mb-6">
               Nuestra Historia
             </h2>
@@ -51,13 +62,16 @@ function Nosotros() {
           </div>
         </div>
         
-        <div className="flex justify-center relative z-10 group">
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#2563eb]/30 to-[#11b189]/30 rounded-2xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500 scale-110"></div>
-            <img 
-              src="/assets/images/banner/nosotrosKuyen.jpg" 
-              alt="Historia de Kuyen" 
-              className="relative w-full max-w-md h-80 object-cover rounded-2xl shadow-2xl transform transition-all duration-500 group-hover:scale-105 border-4 border-white/50"
+        <div className="flex justify-center relative z-20 group">
+          <div className="relative w-full max-w-lg">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2563eb]/40 to-[#11b189]/40 rounded-2xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500 scale-110"></div>
+            <video
+              src="/assets/videos/videoKuyen.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="relative w-full h-[40rem] sm:h-[45rem] lg:h-[50rem] object-cover rounded-2xl shadow-2xl transform transition-all duration-500 group-hover:scale-105 border-4 border-white/70"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#182e59]/20 to-transparent rounded-2xl"></div>
           </div>
@@ -176,7 +190,7 @@ function Nosotros() {
         </div>
       </section>
 
-    
+      </div>
     </div>
   );
 }

@@ -4,7 +4,7 @@ export const productos = [
     id: 1,
     nombre: "Toallón Premium Algodón",
     categoria: "toallones",
-    precio: 2500,
+    precio: 25000,
     descripcion: "Toallón 100% algodón con máxima absorción y suavidad. Disponible en varios colores.",
     colores: ["Blanco", "Azul", "Gris", "Beige"],
     medidas: "70x140cm",
