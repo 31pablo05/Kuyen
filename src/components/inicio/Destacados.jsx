@@ -136,13 +136,13 @@ function Destacados() {
         <div className={`text-center mb-12 sm:mb-16 transform transition-all duration-1000 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-teal-500/20 backdrop-blur-xl px-6 py-3 rounded-full shadow-2xl mb-6 border border-cyan-400/30">
-            <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[#2563eb]/20 via-[#4093bc]/20 to-[#11b189]/20 backdrop-blur-xl px-6 py-3 rounded-full shadow-2xl mb-6 border border-[#11b189]/30">
+            <span className="w-2 h-2 bg-[#11b189] rounded-full animate-pulse" />
             <span className="text-sm font-semibold text-white tracking-wide">Lo Mejor de Kuyen</span>
           </div>
           
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-            <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-400 bg-clip-text text-transparent animate-gradient-x">
+            <span className="block bg-gradient-to-r from-[#11b189] via-[#4093bc] to-[#2563eb] bg-clip-text text-transparent animate-gradient-x">
               Productos Destacados
             </span>
           </h2>
@@ -155,7 +155,7 @@ function Destacados() {
         {/* Carrusel de productos */}
         <div className="flex flex-col items-center justify-center w-full">
           <div className="relative w-full max-w-5xl mx-auto">
-            <div className="relative min-h-[600px] sm:min-h-[650px] lg:min-h-[700px]">
+            <div className="relative min-h-[700px] sm:min-h-[650px] lg:min-h-[700px]">
               {productosDestacados.map((producto, idx) => (
                 <div
                   key={producto.id}
@@ -181,7 +181,7 @@ function Destacados() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                         
                         {/* Badges */}
-                        <div className="absolute top-4 left-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                        <div className="absolute top-4 left-4 bg-gradient-to-r from-[#2563eb] to-[#4093bc] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
                           {producto.categoria}
                         </div>
                         
@@ -207,7 +207,7 @@ function Destacados() {
                       <div className="lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
                         {/* Info principal */}
                         <div>
-                          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4 group-hover:text-cyan-400 transition-colors">
+                          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4 group-hover:text-[#11b189] transition-colors">
                             {producto.nombre}
                           </h3>
 
@@ -217,13 +217,13 @@ function Destacados() {
 
                           {/* Características */}
                           <div className="mb-6">
-                            <h4 className="text-sm font-semibold text-cyan-400 mb-3 uppercase tracking-wider">
+                            <h4 className="text-sm font-semibold text-[#11b189] mb-3 uppercase tracking-wider">
                               Características destacadas
                             </h4>
                             <div className="grid gap-3">
                               {producto.caracteristicas.map((caracteristica, index) => (
                                 <div key={index} className="flex items-center gap-3 group/item">
-                                  <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full group-hover/item:scale-150 transition-transform" />
+                                  <div className="w-2 h-2 bg-gradient-to-r from-[#11b189] to-[#2563eb] rounded-full group-hover/item:scale-150 transition-transform" />
                                   <span className="text-sm sm:text-base text-slate-300 font-medium">
                                     {caracteristica}
                                   </span>
@@ -235,7 +235,7 @@ function Destacados() {
                           {/* Precio */}
                           <div className="mb-6">
                             <div className="flex items-baseline gap-3 mb-2">
-                              <span className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                              <span className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-[#11b189] to-[#4093bc] bg-clip-text text-transparent">
                                 ${producto.precio.toLocaleString()}
                               </span>
                               <span className="text-lg text-slate-500 line-through">
@@ -252,21 +252,24 @@ function Destacados() {
                         </div>
 
                         {/* Botones de acción */}
-                        <div className="flex flex-col sm:flex-row gap-3">
-                          <button className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-cyan-500/50 flex items-center justify-center gap-2">
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="flex flex-col sm:flex-row gap-3 mb-4 sm:mb-0">
+                          <button className="flex-1 bg-gradient-to-r from-[#2563eb] to-[#4093bc] hover:from-[#1d50d9] hover:to-[#2563eb] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-[#2563eb]/50 flex items-center justify-center gap-2 text-sm sm:text-base">
+                            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
                             <span>Agregar al Carrito</span>
                           </button>
                           
-                          <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-6 py-4 rounded-xl font-bold transition-all duration-300 border border-white/20 hover:border-cyan-400/50 flex items-center justify-center gap-2">
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <a 
+                            href="/productos" 
+                            className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 border border-white/20 hover:border-[#11b189]/50 flex items-center justify-center gap-2 text-sm sm:text-base"
+                          >
+                            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                             </svg>
-                            Ver Detalles
-                          </button>
+                            Ver Catálogo
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -275,25 +278,25 @@ function Destacados() {
               ))}
             </div>
 
-            {/* Controles del carrusel */}
-            <div className="flex justify-center items-center gap-6 mt-8 relative z-20">
+            {/* Controles del carrusel - separados más del contenido */}
+            <div className="flex justify-center items-center gap-4 sm:gap-6 mt-12 sm:mt-8 relative z-20">
               <button
-                className="bg-white/10 backdrop-blur-xl text-white rounded-full p-3 shadow-xl hover:bg-white/20 hover:shadow-2xl transition-all duration-300 transform hover:scale-110 border border-white/20 hover:border-cyan-400/50"
+                className="bg-white/10 backdrop-blur-xl text-white rounded-full p-2 sm:p-3 shadow-xl hover:bg-white/20 hover:shadow-2xl transition-all duration-300 transform hover:scale-110 border border-white/20 hover:border-[#11b189]/50"
                 onClick={() => setActiveIndex((prev) => (prev === 0 ? productosDestacados.length - 1 : prev - 1))}
                 aria-label="Anterior"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
               
-              <div className="flex gap-3">
+              <div className="flex gap-2 sm:gap-3">
                 {productosDestacados.map((_, idx) => (
                   <button
                     key={idx}
                     className={`transition-all duration-300 rounded-full ${
                       idx === activeIndex 
-                        ? 'w-10 h-3 bg-gradient-to-r from-cyan-400 to-blue-500 shadow-lg' 
+                        ? 'w-8 sm:w-10 h-3 bg-gradient-to-r from-[#11b189] to-[#2563eb] shadow-lg' 
                         : 'w-3 h-3 bg-white/30 hover:bg-white/50'
                     }`}
                     onClick={() => setActiveIndex(idx)}
@@ -303,17 +306,17 @@ function Destacados() {
               </div>
               
               <button
-                className="bg-white/10 backdrop-blur-xl text-white rounded-full p-3 shadow-xl hover:bg-white/20 hover:shadow-2xl transition-all duration-300 transform hover:scale-110 border border-white/20 hover:border-cyan-400/50"
+                className="bg-white/10 backdrop-blur-xl text-white rounded-full p-2 sm:p-3 shadow-xl hover:bg-white/20 hover:shadow-2xl transition-all duration-300 transform hover:scale-110 border border-white/20 hover:border-[#11b189]/50"
                 onClick={() => setActiveIndex((prev) => (prev === productosDestacados.length - 1 ? 0 : prev + 1))}
                 aria-label="Siguiente"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
             </div>
 
-            <div className="text-center mt-6">
+            <div className="text-center mt-4 sm:mt-6">
               <span className="text-white/60 text-sm font-medium">
                 {activeIndex + 1} de {productosDestacados.length}
               </span>
@@ -325,16 +328,16 @@ function Destacados() {
         <div className={`text-center mt-16 sm:mt-20 transform transition-all duration-1000 delay-500 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-xl rounded-3xl p-8 sm:p-12 border border-white/10 shadow-2xl">
+          <div className="bg-gradient-to-br from-[#2563eb]/20 to-[#4093bc]/20 backdrop-blur-xl rounded-3xl p-8 sm:p-12 border border-white/10 shadow-2xl">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4">
               ¿Te gustaron nuestros destacados?
             </h3>
             <p className="text-slate-300 text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
-              Descubre más de <span className="text-cyan-400 font-bold">500 productos premium</span> en nuestro catálogo completo
+              Descubre más de <span className="text-[#11b189] font-bold">500 productos premium</span> en nuestro catálogo completo
             </p>
             <a 
               href="/productos" 
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-cyan-500/50"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-[#2563eb] to-[#4093bc] hover:from-[#1d50d9] hover:to-[#2563eb] text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-[#2563eb]/50"
             >
               <span>Ver Todos los Productos</span>
               <svg className="w-5 h-5 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
