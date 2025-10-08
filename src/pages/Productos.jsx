@@ -12,9 +12,9 @@ function Productos() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-[#4093bc]/10 to-[#11b189]/10">
       {/* Hero Section Premium */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+      <div className="relative overflow-hidden bg-gradient-to-br from-[#111d3b] via-[#182e59] to-[#1d50d9]">
         {/* Patrón de fondo animado */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -24,9 +24,9 @@ function Productos() {
         </div>
 
         {/* Gradientes decorativos animados */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#2563eb]/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#11b189]/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#4093bc]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
 
         {/* Partículas flotantes decorativas */}
         <div className="absolute inset-0 overflow-hidden">
@@ -55,11 +55,11 @@ function Productos() {
             <h1 className="text-5xl md:text-7xl font-black text-white mb-4 tracking-tight">
               Nuestros{' '}
               <span className="relative inline-block">
-                <span className="relative z-10 bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 bg-clip-text text-transparent">
+                <span className="relative z-10 bg-gradient-to-r from-[#11b189] via-[#4093bc] to-[#2563eb] bg-clip-text text-transparent">
                   Productos
                 </span>
                 {/* Subrayado decorativo */}
-                <div className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 blur-lg opacity-50"></div>
+                <div className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[#11b189] via-[#4093bc] to-[#2563eb] blur-lg opacity-50"></div>
               </span>
             </h1>
             
@@ -67,7 +67,7 @@ function Productos() {
             <p className="text-xl md:text-2xl text-blue-100/90 max-w-3xl mx-auto leading-relaxed font-light">
               Descubrí nuestra exclusiva colección de productos premium para el hogar.
               <br className="hidden md:block" />
-              <span className="text-emerald-300 font-medium">Calidad excepcional</span> al alcance de tu mano.
+              <span className="text-[#11b189] font-medium">Calidad excepcional</span> al alcance de tu mano.
             </p>
           </div>
 
@@ -76,7 +76,7 @@ function Productos() {
             {/* Stat 1 */}
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 hover:scale-105 group">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-6 transition-transform">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#2563eb] to-[#1d50d9] rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-6 transition-transform">
                   <Award className="w-7 h-7 text-white" />
                 </div>
                 <div>
@@ -89,7 +89,7 @@ function Productos() {
             {/* Stat 2 */}
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 hover:scale-105 group">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-6 transition-transform">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#11b189] to-[#4093bc] rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-6 transition-transform">
                   <TrendingUp className="w-7 h-7 text-white" />
                 </div>
                 <div>
@@ -102,7 +102,7 @@ function Productos() {
             {/* Stat 3 */}
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 hover:scale-105 group">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-6 transition-transform">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#4093bc] to-[#182e59] rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-6 transition-transform">
                   <Zap className="w-7 h-7 text-white" />
                 </div>
                 <div>
@@ -117,7 +117,7 @@ function Productos() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* CTA Principal */}
             <button
-              className="group relative bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-600 hover:via-teal-600 hover:to-cyan-600 text-white font-bold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-3 overflow-hidden"
+              className="group relative bg-gradient-to-r from-[#11b189] via-[#4093bc] to-[#2563eb] hover:from-[#4093bc] hover:via-[#11b189] hover:to-[#1d50d9] text-white font-bold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-[#2563eb]/50 transition-all duration-300 hover:scale-105 flex items-center gap-3 overflow-hidden"
               onClick={() => {
                 const catalogoSection = document.querySelector('.relative.-mt-1');
                 if (catalogoSection) {
@@ -166,7 +166,7 @@ function Productos() {
       </div>
 
       {/* Catálogo con transición suave */}
-      <div className="relative -mt-1 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20">
+      <div className="relative -mt-1 bg-gradient-to-br from-slate-50 via-[#4093bc]/10 to-[#11b189]/10">
         <CatalogoEstatico />
       </div>
 
